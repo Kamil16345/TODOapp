@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="TODOApp:ear exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/TODOApp_ear_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="TODOApp/javaeeApplication/javaEEApplication" />
+    </root>
+  </artifact>
+</component>
