@@ -1,4 +1,22 @@
 package com.java.todoApp.model;
 
-public class LoginBean {
+import java.io.Serializable;
+
+public class LoginBean implements Serializable {
+    private static final long UserID = 1L;
+    private String login;
+    private String password;
+
+    public String getLogin(){
+        return login;
+    }
+    public void setLogin(String login){
+        this.login=login;
+    }
+    public String getPassword(){
+        return password;
+    }
+    public void setPassword(String password){
+        this.password=password;
+    }
 }
