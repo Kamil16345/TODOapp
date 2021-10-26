@@ -22,7 +22,7 @@ public class TODO {
         this.targetDate=targetDate;
         this.status=isDone;
     }
-    public TODO(String title, String login, String description, LocalDate targetDate, boolean isDone) {
+    public TODO(long id, String title, String login, String description, LocalDate targetDate, boolean isDone) {
         super();
         this.title = title;
         this.login = login;

@@ -11,5 +11,5 @@ public interface TodoDAO {
 
     List<TODO> selectAllTodos();
     boolean deleteTodo(int id) throws SQLException;
-    boolean updateTodo(int todo) throws SQLException;
+    boolean updateTodo(TODO todo) throws SQLException;
 }
