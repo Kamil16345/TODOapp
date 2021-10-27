@@ -71,8 +71,35 @@ public class TODOController extends HttpServlet {
     private void insertTODO(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException{
         String title = request.getParameter("title");
         String description = request.getParameter("description");
-        String username = request.getParameter("username");
+        String login = request.getParameter("login");
         boolean isDone = Boolean.valueOf(request.getParameter("isDone"));
-        TODO Todo = new TODO(title, username, description, LocalDate.now(), isDone);
+        TODO Todo = new TODO(title, login, description, LocalDate.now(), isDone);
+    }
+    private void updateTODO(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException{
+        int id = Integer.parseInt(request.getParameter("title"));
+
+        String title = request.getParameter("title");
+        String login = request.getParameter("login");
+        String description = request.getParameter("description");
+        LocalDate targetDate = LocalDate.parse(request.getParameter("targetDate"));
+
+        boolean isDone = Boolean.valueOf(request.getParameter("isDone"));
+        TODO updateTODO = new TODO(id, title, login, description, targetDate, isDone);
+
+        todoDao.updateTodo(updateTODO);
+        response.sendRedirect("list");
+    }
+    private void deleteTODO(HttpServletRequest request, HttpServletResponse response )throws SQLException, IOException{
+        int id = Integer.parseInt(request.getParameter("id"));
+        todoDao.deleteTodo(id);
+        response.sendRedirect("list");
+    }
+    private void showEditForm(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, IOException, ServletException{
+            int id = Integer.parseInt(request.getParameter("id"));
+            TODO existingTodo = todoDao.selectTODO(id);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("todo/todo-form.jsp");
+            request.setAttribute("todo", existingTodo);
+            dispatcher.forward(request, response);
     }
 }

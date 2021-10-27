@@ -3,17 +3,17 @@ package com.java.todoApp.model;
 import java.time.LocalDate;
 
 public class TODO {
+    private String title;
+    private String login;
     private boolean status;
     private LocalDate targetDate;
     private String description;
-    private String login;
-    private String title;
     private Long id;
 
     protected TODO(){
 
     }
-    public TODO(long id, String title, String description, boolean isDone, LocalDate targetDate){
+    public TODO(long id, String title, String login, String description, LocalDate targetDate, boolean isDone){
         super();
         this.id=id;
         this.title=title;
@@ -22,7 +22,7 @@ public class TODO {
         this.targetDate=targetDate;
         this.status=isDone;
     }
-    public TODO(long id, String title, String login, String description, LocalDate targetDate, boolean isDone) {
+    public TODO(String title, String login, String description, LocalDate targetDate, boolean isDone) {
         super();
         this.title = title;
         this.login = login;
