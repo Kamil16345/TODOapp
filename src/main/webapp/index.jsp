@@ -5,9 +5,11 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
-<h1><%= "Hello World!" %>
+<h1><%= "Welcome to my CRUD App. Add your task and maintain it! "%>
 </h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+<h3><a href="register/register.jsp">Sign in</a></h3>
+<h3><a href="login/login.jsp">Sign up</a></h3></br>
+
 </body>
 </html>
