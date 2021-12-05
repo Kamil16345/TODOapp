@@ -1,8 +1,8 @@
-package com.java.todoApp.dao;
+package com.example.todoapp.dao;
 
-import com.java.todoApp.dao.TodoDAO;
-import com.java.todoApp.model.TODO;
-import com.java.todoApp.utils.JDBCUtils;
+import com.example.todoapp.dao.TodoDAO;
+import com.example.todoapp.model.TODO;
+import com.example.todoapp.utils.JDBCUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,20 +13,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TodoDAOImpl implements TodoDAO {
-    private static final String INSERT_TASKS_SQL="INSERT INTO tasks (title, username, description, target_date, is_done)"+
+    private static final String INSERT_TODOS_SQL="INSERT INTO todos (title, username, description, target_date, is_done)"+
             "VLUES"+"(?,?,?,?);";
-    private static final String SELECT_TODO_BY_ID = "select id, title, username, description, target_date, is_done from taska where id=?";
-    private static final String SELECT_ALL_TODOS = "select * from tasks";
-    private static final String DELETE_TODO_BY_ID ="delete from tasks where id=?;";
-    private static final String UPDATE_TODO="update tasks set title=? ,username=?,description=?, target_date=?, is_done=? where id=?;";
+    private static final String SELECT_TODO_BY_ID = "select id, title, username, description, target_date, is_done from todos where id=?";
+    private static final String SELECT_ALL_TODOS = "select * from todos";
+    private static final String DELETE_TODO_BY_ID ="delete from todos where id=?;";
+    private static final String UPDATE_TODO="update todos set title=? ,username=?,description=?, target_date=?, is_done=? where id=?;";
 
     public TodoDAOImpl(){}
     @Override
     public void insertTODO(TODO todo) throws SQLException {
-        System.out.println(INSERT_TASKS_SQL);
+        System.out.println(INSERT_TODOS_SQL);
 
-        try(Connection connection = JDBCUtils.getConnection(); PreparedStatement preparedStatement=
-                connection.prepareStatement(INSERT_TASKS_SQL)){
+        try(Connection connection = JDBCUtils.getConnection();
+            PreparedStatement preparedStatement=
+                connection.prepareStatement(INSERT_TODOS_SQL)){
             preparedStatement.setString(1,todo.getTitle());
             preparedStatement.setString(2,todo.getLogin());
             preparedStatement.setString(3, todo.getDescription());
