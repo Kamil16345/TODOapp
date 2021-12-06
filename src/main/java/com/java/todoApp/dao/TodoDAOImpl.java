@@ -29,7 +29,7 @@ public class TodoDAOImpl implements TodoDAO {
             PreparedStatement preparedStatement=
                 connection.prepareStatement(INSERT_TODOS_SQL)){
             preparedStatement.setString(1,todo.getTitle());
-            preparedStatement.setString(2,todo.getLogin());
+            preparedStatement.setString(2,todo.getUsername());
             preparedStatement.setString(3, todo.getDescription());
             preparedStatement.setDate(4, JDBCUtils.getSQLDate(todo.getTargetDate()));
             preparedStatement.setBoolean(5, todo.getStatus());
@@ -109,7 +109,7 @@ public class TodoDAOImpl implements TodoDAO {
         try (Connection connection = JDBCUtils.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_TODO);) {
             preparedStatement.setString(1, todo.getTitle());
-            preparedStatement.setString(2, todo.getLogin());
+            preparedStatement.setString(2, todo.getUsername());
             preparedStatement.setString(3, todo.getDescription());
             preparedStatement.setDate(4, JDBCUtils.getSQLDate(todo.getTargetDate()));
             preparedStatement.setBoolean(5, todo.getStatus());
