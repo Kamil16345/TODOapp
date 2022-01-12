@@ -1,17 +1,17 @@
-package com.java.todoApp.model;
+package com.example.todoapp.model;
 
 import java.io.Serializable;
 
 public class LoginBean implements Serializable {
     private static final long UserID = 1L;
-    private String login;
+    private String username;
     private String password;
 
-    public String getLogin(){
-        return login;
+    public String getUsername(){
+        return username;
     }
-    public void setLogin(String login){
-        this.login=login;
+    public void setUsername(String username){
+        this.username=username;
     }
     public String getPassword(){
         return password;

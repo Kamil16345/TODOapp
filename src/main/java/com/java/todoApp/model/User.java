@@ -1,4 +1,4 @@
-package com.java.todoApp.model;
+package com.example.todoapp.model;
 
 import java.io.Serializable;
 
@@ -6,7 +6,7 @@ public class User implements Serializable {
     private final static long UserID = 1L;
     private String firstName;
     private String lastName;
-    private String login;
+    private String username;
     private String password;
     public String getFirstName(){
         return firstName;
@@ -20,11 +20,11 @@ public class User implements Serializable {
     public void setLastName(String lastname) {
         this.lastName = lastname;
     }
-    public String getLogin(){
-        return login;
+    public String getUsername(){
+        return username;
     }
-    public void setLogin(String login){
-        this.login=login;
+    public void setUsername(String username){
+        this.username=username;
     }
     public String getPassword(){
         return password;

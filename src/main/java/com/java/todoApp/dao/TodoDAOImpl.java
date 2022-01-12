@@ -14,7 +14,7 @@ import java.util.List;
 
 public class TodoDAOImpl implements TodoDAO {
     private static final String INSERT_TODOS_SQL="INSERT INTO todos (title, username, description, target_date, is_done)"+
-            "VLUES"+"(?,?,?,?);";
+            "VALUES"+"(?,?,?,?,?);";
     private static final String SELECT_TODO_BY_ID = "select id, title, username, description, target_date, is_done from todos where id=?";
     private static final String SELECT_ALL_TODOS = "select * from todos";
     private static final String DELETE_TODO_BY_ID ="delete from todos where id=?;";
@@ -57,7 +57,7 @@ public class TodoDAOImpl implements TodoDAO {
                 String username=rs.getString("username");
                 String description = rs.getString("description");
                 LocalDate targetDate = rs.getDate("target_date").toLocalDate();
-                boolean isDone = rs.getBoolean("status");
+                boolean isDone = rs.getBoolean("is_done");
                 todo= new TODO(id, title, username, description, targetDate, isDone);
             }
             }
@@ -80,7 +80,7 @@ public class TodoDAOImpl implements TodoDAO {
                 String title=rs.getString("title");
                 String description = rs.getString("description");
                 LocalDate targetDate= rs.getDate("target_date").toLocalDate();
-                boolean isDone = rs.getBoolean("status");
+                boolean isDone = rs.getBoolean("is_done");
                 todos.add(new TODO(id, title, username, description, targetDate, isDone));
             }
         }

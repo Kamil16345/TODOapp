@@ -1,7 +1,7 @@
-package com.java.todoApp.web;
+package com.example.todoapp.web;
 
-import com.java.todoApp.dao.UserDAO;
-import com.java.todoApp.model.User;
+import com.example.todoapp.dao.UserDAO;
+import com.example.todoapp.model.User;
 
 import java.io.IOException;
 
@@ -33,13 +33,13 @@ public class UserController extends HttpServlet {
     private void register(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String firstName=request.getParameter("firstName");
         String lastName= request.getParameter("lastName");
-        String login = request.getParameter("login");
+        String username = request.getParameter("username");
         String password = request.getParameter("password");
 
         User employee = new User();
         employee.setFirstName(firstName);
         employee.setLastName(lastName);
-        employee.setLogin(login);
+        employee.setUsername(username);
         employee.setPassword(password);
 
         try{

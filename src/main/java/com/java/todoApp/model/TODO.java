@@ -1,70 +1,82 @@
-package com.java.todoApp.model;
+package com.example.todoapp.model;
 
 import java.time.LocalDate;
 
 public class TODO {
+    private long id;
     private String title;
-    private String login;
+    private String username;
     private boolean status;
     private LocalDate targetDate;
     private String description;
-    private Long id;
 
     protected TODO(){
-
     }
-    public TODO(long id, String title, String login, String description, LocalDate targetDate, boolean isDone){
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public LocalDate getTargetDate() {
+        return targetDate;
+    }
+
+    public void setTargetDate(LocalDate targetDate) {
+        this.targetDate = targetDate;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public TODO(long id, String title, String username, String description, LocalDate targetDate, boolean isDone){
         super();
         this.id=id;
         this.title=title;
-        this.login=login;
+        this.username=username;
         this.description=description;
         this.targetDate=targetDate;
         this.status=isDone;
     }
-    public TODO(String title, String login, String description, LocalDate targetDate, boolean isDone) {
+    public TODO(String title, String username, String description, LocalDate targetDate, boolean isDone) {
         super();
         this.title = title;
-        this.login = login;
+        this.username = username;
         this.description = description;
         this.targetDate = targetDate;
         this.status = isDone;
-    }
-    public Long getId(){
-        return id;
-    }
-    public void setId(Long id){
-        this.id=id;
-    }
-    public String getTitle(){
-        return title;
-    }
-    public void setTitle(String title){
-        this.title=title;
-    }
-    public String getLogin(){
-        return login;
-    }
-    public void setLogin(String login){
-        this.login=login;
-    }
-    public String getDescription(){
-        return description;
-    }
-    public void setDescription(){
-        this.description=description;
-    }
-    public LocalDate getTargetDate(){
-        return targetDate;
-    }
-    public void setTargetDate(LocalDate targetDate){
-        this.targetDate=targetDate;
-    }
-    public boolean getStatus(){
-        return status;
-    }
-    public void setStatus(boolean status){
-        this.status=status;
     }
     @Override
     public int hashCode(){

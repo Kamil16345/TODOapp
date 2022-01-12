@@ -8,8 +8,11 @@ import java.time.LocalDate;
 import java.util.TimeZone;
 
 public class JDBCUtils {
-    //private static String URL="jdbc:mysql://127.0.0.1:3306/todoapp?useSSL=false";
-    private static String URL = "jdbc:mysql://localhost:3306/todoapp?serverTimezone=" + TimeZone.getDefault().getID();
+    //private static String URL="jdbc:mysql://localhost:3306/todoapp";
+    private static String URL="jdbc:mysql://localhost:3306/todoapp?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
+    //private static String URL="jdbc:mysql://localhost:3306/todoapp?useSSL=false";
+    //private static String URL = "jdbc:mysql://localhost:3306/todoapp?serverTimezone=" + TimeZone.getDefault().getID();
+
     private static String username= "root";
     private static String password = "admin";
 
