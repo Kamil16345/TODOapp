@@ -1,7 +1,7 @@
-package com.example.todoapp.web;
+package com.java.todoapp.web;
 
-import com.example.todoapp.dao.UserDAO;
-import com.example.todoapp.model.User;
+import com.java.todoapp.dao.UserDAO;
+import com.java.todoapp.model.User;
 
 import java.io.IOException;
 
@@ -36,14 +36,14 @@ public class UserController extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        User employee = new User();
-        employee.setFirstName(firstName);
-        employee.setLastName(lastName);
-        employee.setUsername(username);
-        employee.setPassword(password);
+        User user = new User();
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
+        user.setUsername(username);
+        user.setPassword(password);
 
         try{
-            int result = userDao.registerEmployee(employee);
+            int result = userDao.registerUser(user);
             if (result==1){
                 request.setAttribute("NOTIFICATION", "User Registered correctly.");
             }

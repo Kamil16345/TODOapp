@@ -1,8 +1,8 @@
-package com.example.todoapp.dao;
+package com.java.todoapp.dao;
 
-import com.example.todoapp.dao.TodoDAO;
-import com.example.todoapp.model.TODO;
-import com.example.todoapp.utils.JDBCUtils;
+import com.java.todoapp.dao.TodoDAO;
+import com.java.todoapp.model.TODO;
+import com.java.todoapp.utils.JDBCUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

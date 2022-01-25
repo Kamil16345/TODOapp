@@ -1,10 +1,10 @@
-package com.example.todoapp.web;
+package com.java.todoapp.web;
 
-import com.example.todoapp.dao.LoginDAO;
-import com.example.todoapp.dao.TodoDAO;
-import com.example.todoapp.dao.TodoDAOImpl;
-import com.example.todoapp.model.LoginBean;
-import com.example.todoapp.model.TODO;
+import com.java.todoapp.dao.LoginDAO;
+import com.java.todoapp.dao.TodoDAO;
+import com.java.todoapp.dao.TodoDAOImpl;
+import com.java.todoapp.model.LoginBean;
+import com.java.todoapp.model.TODO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

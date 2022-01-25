@@ -1,4 +1,4 @@
-package com.example.todoapp.utils;
+package com.java.todoapp.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,6 +1,7 @@
-package com.example.todoapp.dao;
+package com.java.todoapp.dao;
 
-import com.example.todoapp.model.LoginBean;
+import com.java.todoapp.model.LoginBean;
+
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,7 +12,7 @@ public class LoginDAO{
     public boolean validate(LoginBean loginBean)throws ClassNotFoundException{
         boolean status = false;
         Class.forName("com.mysql.jdbc.Driver");
-        try(Connection connection = com.example.todoapp.utils.JDBCUtils.getConnection();
+        try(Connection connection = com.java.todoapp.utils.JDBCUtils.getConnection();
             PreparedStatement preparedStatement =connection.prepareStatement("select * from users where username=? and password=? ")){
             preparedStatement.setString(1, loginBean.getUsername());
             preparedStatement.setString(2, loginBean.getPassword());
@@ -22,7 +23,7 @@ public class LoginDAO{
         }
 
         catch(SQLException ex) {
-            com.example.todoapp.utils.JDBCUtils.printSQLException(ex);
+            com.java.todoapp.utils.JDBCUtils.printSQLException(ex);
         }
            return status;
     }

@@ -1,6 +1,6 @@
-package com.example.todoapp.dao;
+package com.java.todoapp.dao;
 
-import com.example.todoapp.model.TODO;
+import com.java.todoapp.model.TODO;
 
 import java.sql.SQLException;
 import java.util.List;
